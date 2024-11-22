@@ -1,18 +1,48 @@
-## Getting Started
+## Desenvolvedores
+Emanuel Ferreira, Kauã Araújo, Lucas Marques, [Marcio Ventura](https://github.com/cau-r) e [Rodrigo Santos](https://github.com/rodrigosantos-eng).
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Descrição
+Projeto referente a uma avaliação de Lógica de Programação em Algoritmos da 2ª unidade.
 
-## Folder Structure
+**Disciplina**: Lógica de Programação e Algoritmos.
 
-The workspace contains two folders by default, where:
+**Profa.**: Christianne Orrico Dalforno 
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### Instruções: 
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+**Jogo da senha**
 
-## Dependency Management
+Segundo a Wikipedia, o jogo da senha (Mastermind) foi criado por Mordechai Meirowitz. Consistia num jogo de tabuleiro em que uma senha de quatro dígitos representados por pinos coloridos (sendo 6 possibilidades de cores) era estabelecida pelo jogador desafiador e deveria ser descoberta em 10 tentativas pelo jogador desafiado.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Para tanto, a cada tentativa, o desafiador informava ao desafiado quantos pinos estavam na posição correta e quantos faziam parte da senha mas estavam em posição equivocada. 
+
+**Implementação**
+
+Como será utilizada interface de texto, ao invés de cores serão usados números (de 1 a 6) para compor a senha de quatro dígitos.
+
+A senha deve ser gerada aleatoriamente pelo programa.
+
+A senha deve ser armazenada num vetor de quatro posições e um outro vetor similar deve ser usado para receber as tentativas do jogador desafiado.
+
+A cada tentativa, o programa deve informar a quantidade de números corretos em posição correta e a quantidade de números corretos (ou seja que fazem parte da senha) em posição equivocada.
+
+#### Exemplo: 
+
+**Senha correta: 1 1 3 5**
+<br><br>
+**Tentativa 1**: 1 1 1 1 
+<br>
+Dígitos corretos: 2 
+<br>
+Dígitos deslocados: 0 
+
+**Tentativa 2**: 1 1 2 3 
+<br>
+Dígitos corretos: 2 
+<br>
+Dígitos deslocados: 1 
+
+E assim sucessivamente. 
+
+O jogo termina quando o jogador desafiado acerta a senha, sendo portanto vencedor, ou quando terminam as dez tentativas, sendo vencedor o computador.
