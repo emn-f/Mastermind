@@ -5,8 +5,7 @@ Emanuel Ferreira, Kauã Araújo, Lucas Marques, [Marcio Ventura](https://github.
 Projeto referente a uma avaliação de Lógica de Programação em Algoritmos da 2ª unidade.
 
 **Disciplina**: Lógica de Programação e Algoritmos.
-d
-**Profa.**: Christianne Orrico Dalforno 
+**Profa.**: Christianne Orrico Dalforno .
 
 ### Instruções: 
 
