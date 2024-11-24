@@ -1,5 +1,5 @@
 ## Desenvolvedores
-Emanuel Ferreira, Kauã Araújo, Lucas Marques, [Marcio Ventura](https://github.com/cau-r) e [Rodrigo Santos](https://github.com/rodrigosantos-eng).
+Emanuel Ferreira, Kauã Araújo, [Marcio Ventura](https://github.com/cau-r) e [Rodrigo Santos](https://github.com/rodrigosantos-eng).
 
 ## Descrição
 Projeto referente a uma avaliação de Lógica de Programação em Algoritmos da 2ª unidade.
@@ -45,3 +45,84 @@ Dígitos deslocados: 1
 E assim sucessivamente. 
 
 O jogo termina quando o jogador desafiado acerta a senha, sendo portanto vencedor, ou quando terminam as dez tentativas, sendo vencedor o computador.
+
+## Explicação de algumas validações
+**pSenha** - Método que preenche o vetor com 4 dígitos aleatórios.
+```java
+public static void pSenha(int senha[]) {
+        Random shuffle = new Random();
+        for (int i = 0; i < senha.length; i++) {
+            senha[i] = shuffle.nextInt(6) + 1;
+        }
+    }
+```
+
+**pTentativa** -  Método que registra e trata as tentativas do usuário
+
+```java
+public static void pTentativa(int tentativa[], int senha[]) {
+    Scanner in = new Scanner(System.in);
+    int digCorreto = 0;
+    int digDeslocados = 0;
+    int contTentativa = 0;
+    
+    boolean validacao[] = new boolean[4];
+```
+**for** (1) - Responsável pra pegar a tentativa do usuário caso ele ainda não tenha tentado 10 vezes e não tenha informado 4 dígitos corretos na última tentativa.
+
+```java
+    for (contTentativa = 1; ((contTentativa <= 10) && digCorreto < 4); contTentativa++) {
+        System.out.println("TENTATIVA " + contTentativa);
+        System.out.print("Informe a senha: ");
+        int senhaUsu = in.nextInt();
+```
+
+Passa a senha informada em int para a string senhaUsuStr para permitir a utilização do charAt.
+```java
+    String senhaUsuStr = String.valueOf(senhaUsu);
+```
+**while** - O usuário não pode informar uma senha diferente de 4 dígitos.
+```java
+    while (senhaUsuStr.length() != 4) {
+        System.out.print("Digite uma senha de 4 dígitos: ");
+        senhaUsu = in.nextInt();
+        senhaUsuStr = String.valueOf(senhaUsu);
+    }
+```
+**for** (2) - Percorre e preenche o vetor tentativa de acordo com a senha informada pelo usuário que foi atribuída à senhaUsuStr.
+```java
+    for (int i = 0; i < tentativa.length; i++) {
+        tentativa[i] = Character.getNumericValue(senhaUsuStr.charAt(i));
+    }
+```
+**for** (3) - Percorre tentativa e caso algum dígito esteja na posição correta, soma digCorreto + 1 e atribui true a essa posição no vetor validacao.
+```java
+    for (int i = 0; i < tentativa.length; i++) {
+        if (tentativa[i] == senha[i]) {
+            digCorreto++;
+            validacao[i] = true;
+        }
+    }
+```
+
+for (4) -  Validação mais complexa: contagem de dígitos deslocados
+```java
+    for (int i = 0; i < tentativa.length; i++) {
+```
+Se a **tentativa[i]** for diferente da **senha[i]**.
+```java
+        if (tentativa[i] != senha[i]) {
+```
+Busca do dígito em outras posições, verifica se o valor da **tentativa** é igual a alguma valor em outra posição.<br>
+A segunda condição no **if** garante que esse dígito ainda não foi validado e não foi considerado correto em sua posição original.
+```java
+            for (int j = 0; j < senha.length; j++) {
+                if (tentativa[i] == senha[j] && !validacao[j] && !validacao[i]) {
+                    digDeslocados++;
+                    validacao[j] = true;
+                    break;
+                }
+            }
+        }
+    }
+```
