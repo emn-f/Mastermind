@@ -2,7 +2,8 @@
 Emanuel Ferreira, Kauã Araújo, [Marcio Ventura](https://github.com/cau-r) e [Rodrigo Santos](https://github.com/rodrigosantos-eng).
 
 ## Descrição
-Projeto referente a uma avaliação de Lógica de Programação em Algoritmos da 2ª unidade.
+Projeto referente a uma avaliação de LPA.
+Data: 28/11/2024.
 
 **Disciplina**: Lógica de Programação e Algoritmos.
 **Profa.**: Christianne Orrico Dalforno .
