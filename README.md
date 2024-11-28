@@ -3,6 +3,7 @@ Emanuel Ferreira, Kauã Araújo, [Marcio Ventura](https://github.com/cau-r) e [R
 
 ## Descrição
 Projeto referente a uma avaliação de LPA.
+
 Data: 28/11/2024.
 
 **Disciplina**: Lógica de Programação e Algoritmos.
