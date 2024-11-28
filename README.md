@@ -109,7 +109,7 @@ Passa a senha informada em int para a string senhaUsuStr para permitir a utiliza
     }
 ```
 
-for (4) -  Validação mais complexa: contagem de dígitos deslocados
+for (4) -  Não imaginávamos mas esse bloco foi o que deu mais trabalho 🫠. Contagem de dígitos deslocados
 ```java
     for (int i = 0; i < tentativa.length; i++) {
 ```
