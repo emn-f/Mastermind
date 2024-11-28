@@ -27,12 +27,10 @@ public class Mastermind {
         int contTentativa = 0;
 
         boolean validacao[] = new boolean[4];
+        int senhaUsu;
+        String senhaUsuStr = "";
 
         for (contTentativa = 1; ((contTentativa <= 10) && digCorreto < 4); contTentativa++) {
-
-            int senhaUsu;
-            String senhaUsuStr = "";
-
             System.out.println("TENTATIVA " + contTentativa);
 
             while (senhaUsuStr.length() != 4) {
