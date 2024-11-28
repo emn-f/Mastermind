@@ -8,11 +8,11 @@ public class Mastermind {
         int tentativa[] = new int[4];
         preencherSenha(senha);
         preencheTentativa(tentativa, senha);
-
     }
 
     public static void preencherSenha(int senha[]) {
         Random shuffle = new Random();
+
         for (int i = 0; i < senha.length; i++) {
             senha[i] = shuffle.nextInt(6) + 1;
         }
@@ -29,12 +29,12 @@ public class Mastermind {
         boolean validacao[] = new boolean[4];
 
         for (contTentativa = 1; ((contTentativa <= 10) && digCorreto < 4); contTentativa++) {
-            
+
             int senhaUsu;
             String senhaUsuStr = "";
-            
+
             System.out.println("TENTATIVA " + contTentativa);
-            
+
             while (senhaUsuStr.length() != 4) {
                 System.out.print("Digite uma senha de 4 dígitos: ");
                 senhaUsu = in.nextInt();
@@ -60,7 +60,6 @@ public class Mastermind {
                         if (tentativa[i] == senha[j] && !validacao[j]) {
                             digDeslocados++;
                             validacao[j] = true;
-                            break;
                         }
                     }
                 }
