@@ -6,36 +6,35 @@ public class Mastermind {
     public static void main(String[] args) throws Exception {
         int senha[] = new int[4];
         int tentativa[] = new int[4];
-        pSenha(senha);
-        pTentativa(tentativa, senha);
+        preencherSenha(senha);
+        preencheTentativa(tentativa, senha);
 
     }
 
-    public static void pSenha(int senha[]) {
+    public static void preencherSenha(int senha[]) {
         Random shuffle = new Random();
         for (int i = 0; i < senha.length; i++) {
             senha[i] = shuffle.nextInt(6) + 1;
         }
     }
 
-    public static void pTentativa(int tentativa[], int senha[]) {
+    public static void preencheTentativa(int tentativa[], int senha[]) {
         Scanner in = new Scanner(System.in);
 
         int digCorreto = 0;
         int digDeslocados = 0;
 
         int contTentativa = 0;
-        
+
         boolean validacao[] = new boolean[4];
 
         for (contTentativa = 1; ((contTentativa <= 10) && digCorreto < 4); contTentativa++) {
+            
+            int senhaUsu;
+            String senhaUsuStr = "";
+            
             System.out.println("TENTATIVA " + contTentativa);
-
-            System.out.print("Informe a senha: ");
-            int senhaUsu = in.nextInt();
-
-            String senhaUsuStr = String.valueOf(senhaUsu);
-
+            
             while (senhaUsuStr.length() != 4) {
                 System.out.print("Digite uma senha de 4 dígitos: ");
                 senhaUsu = in.nextInt();
@@ -45,6 +44,8 @@ public class Mastermind {
             for (int i = 0; i < tentativa.length; i++) {
                 tentativa[i] = Character.getNumericValue(senhaUsuStr.charAt(i));
             }
+
+            Arrays.fill(validacao, false);
 
             for (int i = 0; i < tentativa.length; i++) {
                 if (tentativa[i] == senha[i]) {
@@ -56,7 +57,7 @@ public class Mastermind {
             for (int i = 0; i < tentativa.length; i++) {
                 if (tentativa[i] != senha[i]) {
                     for (int j = 0; j < senha.length; j++) {
-                        if (tentativa[i] == senha[j] && !validacao[j] && !validacao[i]) {
+                        if (tentativa[i] == senha[j] && !validacao[j]) {
                             digDeslocados++;
                             validacao[j] = true;
                             break;
