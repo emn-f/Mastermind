@@ -7,6 +7,7 @@ public class Mastermind {
         int senha[] = new int[4];
         int tentativa[] = new int[4];
         preencherSenha(senha);
+        System.out.println(Arrays.toString(senha));
         preencheTentativa(tentativa, senha);
     }
 
@@ -23,14 +24,15 @@ public class Mastermind {
 
         int digCorreto = 0;
         int digDeslocados = 0;
-
         int contTentativa = 0;
 
         boolean validacao[] = new boolean[4];
-        int senhaUsu;
-        String senhaUsuStr = "";
 
         for (contTentativa = 1; ((contTentativa <= 10) && digCorreto < 4); contTentativa++) {
+
+            int senhaUsu;
+            String senhaUsuStr = "";
+
             System.out.println("TENTATIVA " + contTentativa);
 
             while (senhaUsuStr.length() != 4) {
