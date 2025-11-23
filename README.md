@@ -1,5 +1,5 @@
 ## Desenvolvedores
-Emanuel Ferreira, Kauã Araújo, [Marcio Ventura](https://github.com/cau-r) e [Rodrigo Santos](https://github.com/rodrigosantos-eng).
+[Emanuel Ferreira](https://github.com/emn-f/), [Kauã Araújo](https://github.com/Kauagit99), [Marcio Ventura](https://github.com/cau-r) e [Rodrigo Santos](https://github.com/rodrigosantos-eng).
 
 ## Descrição
 Projeto referente a uma avaliação de LPA.
